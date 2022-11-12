@@ -40,4 +40,11 @@ public class PhoneBookTest {
         Assertions.assertEquals(name, phoneBook.findByNumber(number));
     }
 
+    @Test
+    public void testFindByName() {
+        phoneBook.add("Vasya", "+7 912 345 67 89");
+        String name = "Vasya";
+        String number = "+7 912 345 67 89";
+        Assertions.assertEquals(number, phoneBook.findByName(name));
+    }
 }
