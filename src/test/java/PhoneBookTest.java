@@ -12,6 +12,7 @@ public class PhoneBookTest {
     public void createBook() {
         System.out.println("test start");
         phoneBook = new PhoneBook();
+        phoneBook.add("Vasya", "+7 912 345 67 89");
     }
 
     @AfterEach
@@ -27,14 +28,13 @@ public class PhoneBookTest {
 
     @Test
     public void testAdd() {
-        String name = "Vasya";
-        String number = "+7 912 345 67 89";
+        String name = "Kolya";
+        String number = "+7 912 345 65 12";
         Assertions.assertTrue(phoneBook.add(name, number));
     }
 
     @Test
     public void testFindByNumber() {
-        phoneBook.add("Vasya", "+7 912 345 67 89");
         String name = "Vasya";
         String number = "+7 912 345 67 89";
         Assertions.assertEquals(name, phoneBook.findByNumber(number));
@@ -42,7 +42,6 @@ public class PhoneBookTest {
 
     @Test
     public void testFindByName() {
-        phoneBook.add("Vasya", "+7 912 345 67 89");
         String name = "Vasya";
         String number = "+7 912 345 67 89";
         Assertions.assertEquals(number, phoneBook.findByName(name));
