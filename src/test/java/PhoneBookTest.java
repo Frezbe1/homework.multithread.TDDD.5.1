@@ -54,7 +54,8 @@ public class PhoneBookTest {
     public void testPrintAllNames() {
         String name1 = "Sasha";
         String name2 = "Stas";
-        List<String> expected = List.of(name1, name2);
+        String name3 = "Nikita";
+        List<String> expected = List.of(name3, name1, name2);
         Assertions.assertEquals(expected, phoneBook.printAllNames());
     }
 }
